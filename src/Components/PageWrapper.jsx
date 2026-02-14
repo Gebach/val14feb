@@ -16,9 +16,9 @@ const PageWrapper = observer(() => {
     window.scrollTo(0, 0)
   }, 100)
 
-  // if (!store.isInitialized) {
-  //   return <MainLoader />
-  // }
+  if (!store.isInitialized) {
+    return <MainLoader />
+  }
 
   return (
     <div className="max-w-5xl w-full m-auto py-10 min-h-screen flex flex-col relative">

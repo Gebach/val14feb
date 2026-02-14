@@ -11,7 +11,7 @@ function Lovesongs() {
       <h1 className="text-5xl text-center mb-5">
         А тут я собрал несколько песен, которые ассоциируются у меня с тобой
       </h1>
-      <p className="text-3xl text-center">
+      <p className="text-3xl text-center mb-3">
         (Если будешь слушать и захочешь включить другой трек, !обязательно! останови старый: не успел сделать, чтобы на
         паузу предыдущий ставился( )
       </p>
