@@ -1,5 +1,4 @@
 import { useContext } from 'react'
-import KSB_oslepitelna from '../../assets/songs/KSB_Muzic_Oslepitelna.mp3'
 import { AudioPlayer } from 'react-audio-play'
 import { Context } from '../../main'
 import { Link } from 'react-router'
@@ -12,6 +11,10 @@ function Lovesongs() {
       <h1 className="text-5xl text-center mb-5">
         А тут я собрал несколько песен, которые ассоциируются у меня с тобой
       </h1>
+      <p className="text-3xl text-center">
+        (Если будешь слушать и захочешь включить другой трек, !обязательно! останови старый: не успел сделать, чтобы на
+        паузу предыдущий ставился( )
+      </p>
 
       <div
         className="grid grid-cols-2 gap-12 items-center"
