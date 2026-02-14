@@ -21,10 +21,11 @@ function Lovesongs() {
         style={{ fontFamily: '"Lucida Console", "Courier New", monospace' }}
       >
         {store.lovesongs.map(s => (
-          <div key={Math.random()} className="w-full flex flex-col justify-center items-center gap-5">
-            <p className="text-2xl">{s.title}</p>
-            <div className="image-container max-w-91.5 w-full max-h-91.5 h-full">
-              <img src={s.cover} alt="" className="w-full" />
+          <div key={Math.random()} className="w-full flex flex-col justify-center items-center gap-3">
+            <img src={s.cover} alt="" className="w-full" />
+            <div className="flex flex-col self-start">
+              <p className="text-2xl">{s.name}</p>
+              <p className="text-xl">{s.author}</p>
             </div>
             <AudioPlayer
               src={s.path}
