@@ -1,0 +1,169 @@
+@import 'tailwindcss';
+
+@layer components {
+  .next-btn {
+    @apply text-2xl border-2 border-[#EC6AA1] border-t-0 rounded-2xl py-0.5 px-2 cursor-pointer relative overflow-hidden before:absolute before:bg-[#f16ba39a] before:w-full before:h-12 before:-top-12 before:left-0 before:-z-10 before:transition-all before:duration-300 hover:before:top-12;
+  }
+}
+
+@theme {
+  --animate-wiggle: wiggle 1s ease-in-out infinite;
+  @keyframes wiggle {
+    0%,
+    100% {
+      transform: rotate(-3deg);
+    }
+    50% {
+      transform: rotate(3deg);
+    }
+  }
+}
+
+@font-face {
+  font-family: 'write';
+  src:
+    local('write'),
+    url('./fonts/GreatVibes-Regular.ttf') format('truetype');
+  font-display: swap;
+}
+
+html {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+.moveOutTheScreen-to-left {
+  animation-name: moveOutTheScreenToLeft;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+.navLink.active {
+  font-weight: bolder;
+}
+
+.page-button {
+  padding: 0.5rem 2rem;
+  border: 1px solid pink;
+  border-radius: 1rem;
+  transition: all 0.4s cubic-bezier(0.39, 0.575, 0.565, 1);
+  cursor: pointer;
+}
+
+.page-button:hover {
+  background-color: rgb(243, 157, 171);
+  -webkit-box-shadow: 0px 0px 31px 10px rgba(255, 182, 251, 0.62);
+  box-shadow: 0px 0px 31px 10px rgba(255, 182, 251, 0.62);
+}
+
+.page-button.answered {
+  background-color: rgb(243, 157, 171);
+  -webkit-box-shadow: 0px 0px 31px 10px rgba(255, 182, 251, 0.62);
+  box-shadow: 0px 0px 31px 10px rgba(255, 182, 251, 0.62);
+}
+
+.outlet {
+  font-family: 'write', sans-serif;
+}
+
+.mainHeaderButton {
+  background-image: url(./assets/redHeart.png);
+  background-size: contain;
+  background-position: center 100px;
+  background-repeat: no-repeat;
+
+  transition: background-position 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.mainHeaderButton:hover,
+.mainHeaderButton.active {
+  background-position: center;
+}
+
+.loading-bar::before {
+  content: '';
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: -100%;
+  position: absolute;
+  background-color: pink;
+
+  animation: loadingBarAnim 12s ease-in-out;
+}
+
+.loading-word {
+  transform: translateX(-50%);
+  left: 30%;
+  animation-name: autoSwiper;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+  animation-duration: 3s;
+}
+
+@keyframes moveOutTheScreenToLeft {
+  99% {
+    transform: translateY(-50%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(-50%);
+    position: absolute;
+    opacity: 0;
+  }
+}
+
+@keyframes autoSwiper {
+  15% {
+    opacity: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  90% {
+    opacity: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+}
+
+@keyframes loadingBarAnim {
+  30% {
+    left: -35%;
+  }
+
+  40% {
+    left: -35%;
+  }
+
+  50% {
+    left: -70%;
+  }
+
+  65% {
+    left: -65%;
+  }
+
+  80% {
+    left: -20%;
+  }
+
+  85% {
+    left: -10%;
+  }
+
+  95% {
+    left: -5%;
+  }
+
+  100% {
+    left: 0;
+  }
+}
