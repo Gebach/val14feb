@@ -13,7 +13,6 @@ const RealValentineTest = observer(() => {
 
   const question = store.valentineTestQuestions[activeIndex]
 
-  console.log(activeIndex, store.valentineTestQuestions.length)
   if (activeIndex === store.valentineTestQuestions.length) {
     console.log(123)
     if (!localStorage.getItem('accessToRealValentineTest')) {
@@ -30,7 +29,6 @@ const RealValentineTest = observer(() => {
         store.valentineTestAnswers[activeIndex] = { question: question.question, answer: answeredValue }
       }
       setAnsweredValue('')
-      console.log(activeIndex, store.valentineTestQuestions.length)
     }
   }
 
@@ -108,10 +106,7 @@ const RealValentineTest = observer(() => {
           transition={{ duration: 0.4 }}
           className="flex flex-col gap-5"
         >
-          <h2 className="text-5xl text-center">
-            Поздравляю, ты {localStorage.getItem('accessToRealValentineTest') ? 'снова ' : ''}успешно завершила этот
-            крайне занимательный тест!..
-          </h2>
+          <h2 className="text-5xl text-center">Поздравляю, ты успешно завершила этот крайне занимательный тест!..</h2>
           <p className="text-3xl">
             На самом деле эти ответы были больше для тебя, нежели для меня. Просто чтобы ты покумекала :))
           </p>
